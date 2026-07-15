@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<header class="hero">
+
+<div class="hero-image">
+<img src="assets/header.jpg" alt="">
+</div>
+
+<div class="hero-info">
+
+<span class="badge">
+ПРИГЛАШЕНИЕ
+</span>
+
+<h1>
+Романтический вечер
+</h1>
+
+<p>
+Для самого любимого человека ❤️
+</p>
+
+</div>
+
+</header>
+
+<section class="grid">
+
+<div class="card blue">
+
+<span class="small">
+DATE
+</span>
+
+<h2>
+14
+</h2>
+
+<p>
+Февраля
+</p>
+
+</div>
+
+<div class="card blue">
+
+<span class="small">
+TIME
+</span>
+
+<h2>
+19:00
+</h2>
+
+<p>
+Начало вечера
+</p>
+
+</div>
+
+<div class="card blue wide">
+
+<span class="small">
+LOCATION
+</span>
+
+<h2>
+Название ресторана
+</h2>
+
+<p>
+Москва
+</p>
+
+</div>
+
+</section>
+
+<section class="card large">
+
+<h3>
+О нашем вечере
+</h3>
+
+<p>
+Я хочу провести этот вечер только с тобой.
+Будет вкусный ужин, прогулка, музыка,
+приятные разговоры и маленький сюрприз.
+Надеюсь, ты скажешь «Да».
+</p>
+
+</section>
+
+<section class="gallery">
+
+<h3>
+Наши фотографии
+</h3>
+
+<div class="photos">
+
+<img src="assets/photo1.jpg">
+
+<img src="assets/photo2.jpg">
+
+<img src="assets/photo3.jpg">
+
+<img src="assets/photo4.jpg">
+
+</div>
+
+</section>
+
+<section class="card large">
+
+<h3>
+Программа вечера
+</h3>
+
+<ul>
+
+<li>🍷 Ужин</li>
+
+<li>🌇 Прогулка</li>
+
+<li>📸 Совместные фотографии</li>
+
+<li>🎁 Маленький сюрприз</li>
+
+<li>❤️ Объятия</li>
+
+</ul>
+
+</section>
+
+<section class="card large">
+
+<h3>
+Где встречаемся?</h3>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Москва&t=&z=13&ie=UTF8&iwloc=&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<section class="confirm">
+
+<h2>
+Ты придёшь?
+</h2>
+
+<button id="accept">
+Конечно ❤️
+</button>
+
+<p id="message"></p>
+
+</section>
+
+<footer>
+
+Создано специально для тебя ❤️
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
