@@ -1,11 +1,37 @@
-/* ===========================================
-RESET
-=========================================== */
+/* ==========================================================
+APPLE INVITATION
+Author: ChatGPT
+========================================================== */
+
+:root{
+
+--bg:#eef3ff;
+
+--blue1:#69B2FF;
+--blue2:#428BFF;
+--blue3:#286CF3;
+
+--cream:#F7EEE7;
+
+--white:#ffffff;
+
+--text:#16181d;
+
+--radius:34px;
+
+--gap:10px;
+
+--shadow:
+0 14px 35px rgba(28,63,142,.10);
+
+}
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 }
 
 html{
@@ -18,38 +44,45 @@ body{
 
 font-family:'Inter',sans-serif;
 
-background:#eef3ff;
+background:var(--bg);
+
+color:var(--text);
 
 overflow-x:hidden;
 
-color:#111;
-
 }
 
-/* ===========================================
+/* ==========================================================
 BACKGROUND
-=========================================== */
+========================================================== */
 
-.background{
+.bg{
 
 position:fixed;
 
 inset:0;
 
 background:
-radial-gradient(circle at top,#8db5ff 0%,transparent 45%),
-radial-gradient(circle at bottom,#dce8ff 0%,transparent 50%),
-#eef3ff;
+
+radial-gradient(circle at top,#94bcff 0%,transparent 42%),
+
+radial-gradient(circle at bottom,#dbe8ff 0%,transparent 45%),
+
+linear-gradient(
+180deg,
+#edf3ff,
+#eef3ff
+);
 
 z-index:-2;
 
 }
 
-/* ===========================================
+/* ==========================================================
 LAYOUT
-=========================================== */
+========================================================== */
 
-.feed{
+.app{
 
 width:min(430px,100%);
 
@@ -57,31 +90,25 @@ margin:auto;
 
 padding:16px;
 
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
 }
 
-/* ===========================================
+/* ==========================================================
 HERO
-=========================================== */
+========================================================== */
 
 .hero{
 
 position:relative;
 
+height:330px;
+
 overflow:hidden;
 
-border-radius:34px;
+border-radius:38px;
 
-height:310px;
+box-shadow:var(--shadow);
 
-box-shadow:
-
-0 20px 45px rgba(0,0,0,.18);
+margin-bottom:12px;
 
 }
 
@@ -91,13 +118,13 @@ width:100%;
 
 height:100%;
 
-object-fit:cover;
-
 display:block;
+
+object-fit:cover;
 
 }
 
-.heroOverlay{
+.overlay{
 
 position:absolute;
 
@@ -119,17 +146,17 @@ linear-gradient(
 
 rgba(0,0,0,.05),
 
-rgba(0,0,0,.35)
+rgba(0,0,0,.32)
 
 );
 
 }
 
-.event{
+.eyebrow{
 
-font-size:56px;
+font-size:58px;
 
-font-weight:700;
+font-weight:800;
 
 letter-spacing:-3px;
 
@@ -137,7 +164,7 @@ color:white;
 
 }
 
-.heroInfo{
+.heroBottom{
 
 display:flex;
 
@@ -147,67 +174,126 @@ color:white;
 
 }
 
-.heroInfo span{
+.heroBottom small{
+
+display:block;
 
 font-size:13px;
 
-opacity:.7;
+opacity:.72;
+
+margin-bottom:4px;
 
 }
 
-.heroInfo p{
-
-margin-top:6px;
+.heroBottom p{
 
 font-size:18px;
 
 }
 
-/* ===========================================
-GRID
-=========================================== */
+/* ==========================================================
+APPLE GRID
+========================================================== */
 
-.grid{
+.cards{
 
 display:grid;
 
 grid-template-columns:1fr 1fr;
 
-gap:12px;
+gap:var(--gap);
+
+align-items:start;
 
 }
 
-/* ===========================================
-CARDS
-=========================================== */
+/* ==========================================================
+BASE CARD
+========================================================== */
 
 .card{
 
-border-radius:34px;
+position:relative;
 
 overflow:hidden;
 
-padding:24px;
+border-radius:36px;
 
-position:relative;
+box-shadow:var(--shadow);
 
-box-shadow:
-
-0 15px 35px rgba(0,0,0,.08);
-
-transition:.45s cubic-bezier(.2,.8,.2,1);
+transition:
+transform .45s cubic-bezier(.2,.8,.2,1);
 
 }
 
 .card:hover{
 
-transform:translateY(-4px);
+transform:translateY(-5px);
 
 }
 
-/* ===========================================
-APPLE BLUE
-=========================================== */
+.card::after{
+
+content:"";
+
+position:absolute;
+
+left:-160%;
+
+top:0;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+transform:skewX(-18deg);
+
+pointer-events:none;
+
+animation:shine 8s infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-170%;
+
+}
+
+35%{
+
+left:170%;
+
+}
+
+100%{
+
+left:170%;
+
+}
+
+}
+
+/* ==========================================================
+BLUE
+========================================================== */
 
 .blue{
 
@@ -217,11 +303,11 @@ linear-gradient(
 
 180deg,
 
-#5ca5ff 0%,
+var(--blue1),
 
-#3e85ff 55%,
+var(--blue2) 55%,
 
-#2667f2 100%
+var(--blue3)
 
 );
 
@@ -239,67 +325,33 @@ width:220px;
 
 height:220px;
 
+right:-90px;
+
+top:-80px;
+
 background:
 
 radial-gradient(
 
 circle,
 
-rgba(255,255,255,.20),
+rgba(255,255,255,.25),
 
 transparent 70%
 
 );
 
-right:-70px;
-
-top:-60px;
-
 }
 
-/* ===========================================
-CREAM
-=========================================== */
-
-.cream{
-
-background:#f7ede7;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-}
-
-.cream span{
-
-font-size:18px;
-
-font-weight:600;
-
-letter-spacing:2px;
-
-}
-
-.cream h4{
-
-margin-top:12px;
-
-font-size:34px;
-
-line-height:1.1;
-
-}
-
-/* ===========================================
+/* ==========================================================
 DATE
-=========================================== */
+========================================================== */
 
-.large{
+.date{
 
-min-height:240px;
+height:250px;
+
+padding:24px;
 
 display:flex;
 
@@ -309,41 +361,102 @@ justify-content:flex-end;
 
 }
 
-.large h2{
+.label{
 
-font-size:82px;
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+opacity:.8;
+
+}
+
+.date h2{
+
+font-size:92px;
 
 line-height:1;
 
 letter-spacing:-5px;
 
+margin-top:8px;
+
 }
 
-.large h3{
+.date h3{
 
 font-size:44px;
+
+line-height:1;
 
 margin-top:-8px;
 
 }
 
-.large p{
+.date p{
 
-font-size:22px;
+margin-top:6px;
 
-opacity:.9;
+font-size:20px;
+
+}
+/* ==========================================================
+INVITATION CARD
+========================================================== */
+
+.sand{
+
+height:250px;
+
+padding:24px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+background:var(--cream);
 
 }
 
-/* ===========================================
+.dark{
+
+color:#8d847c;
+
+opacity:1;
+
+}
+
+.sand h2{
+
+margin-top:12px;
+
+font-size:34px;
+
+font-weight:700;
+
+line-height:1.08;
+
+letter-spacing:-1px;
+
+color:#1a1a1a;
+
+}
+
+/* ==========================================================
 PHOTO
-=========================================== */
+========================================================== */
 
 .photo{
 
-padding:0;
+grid-column:1 / -1;
 
-height:220px;
+height:270px;
+
+padding:0;
 
 }
 
@@ -353,21 +466,31 @@ width:100%;
 
 height:100%;
 
+display:block;
+
 object-fit:cover;
 
-display:block;
+transition:transform .7s ease;
 
 }
 
-/* ===========================================
-WIDE
-=========================================== */
+.photo:hover img{
 
-.wide{
+transform:scale(1.06);
 
-grid-column:1/3;
+}
 
-height:130px;
+/* ==========================================================
+ROUTE
+========================================================== */
+
+.route{
+
+grid-column:1 / -1;
+
+height:120px;
+
+padding:24px;
 
 display:flex;
 
@@ -375,9 +498,9 @@ align-items:flex-end;
 
 }
 
-.small{
+.route p{
 
-font-size:28px;
+font-size:27px;
 
 font-weight:600;
 
@@ -385,186 +508,520 @@ line-height:1.15;
 
 }
 
-/* ===========================================
-MESSAGE
-=========================================== */
+/* ==========================================================
+WHITE
+========================================================== */
 
 .white{
 
-background:white;
+background:#fff;
+
+padding:24px;
 
 }
 
-.white h2{
-
-font-size:34px;
-
-line-height:1.1;
-
-}
-
-.white p{
+.white ul{
 
 margin-top:18px;
 
+list-style:none;
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.white li{
+
 font-size:18px;
 
-line-height:1.6;
+padding-bottom:12px;
 
-color:#555;
-
-}
-
-/* ===========================================
-GALLERY
-=========================================== */
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:12px;
+border-bottom:1px solid rgba(0,0,0,.08);
 
 }
 
-.imageTall{
+/* ==========================================================
+PHOTO TALL
+========================================================== */
+
+.photoTall{
+
+height:360px;
 
 padding:0;
 
-height:320px;
-
 }
 
-.imageTall img{
+.photoTall img{
 
 width:100%;
 
 height:100%;
 
+display:block;
+
 object-fit:cover;
 
-}
-
-/* ===========================================
-MAP
-=========================================== */
-
-iframe{
-
-margin-top:18px;
-
-width:100%;
-
-height:280px;
-
-border:none;
-
-border-radius:24px;
+transition:transform .7s ease;
 
 }
 
-/* ===========================================
-RSVP
-=========================================== */
-
-.rsvpCard{
-
-text-align:center;
-
-padding:40px 24px;
-
-}
-
-.rsvpCard h2{
-
-font-size:42px;
-
-}
-
-button{
-
-margin-top:25px;
-
-border:none;
-
-padding:18px 34px;
-
-font-size:22px;
-
-border-radius:100px;
-
-background:white;
-
-color:#2667f2;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
+.photoTall:hover img{
 
 transform:scale(1.05);
 
 }
 
-/* ===========================================
-APPLE MOTION
-=========================================== */
+/* ==========================================================
+QUOTE
+========================================================== */
+
+.quote{
+
+display:flex;
+
+align-items:flex-end;
+
+min-height:360px;
+
+}
+
+.quote h2{
+
+font-size:38px;
+
+font-weight:700;
+
+line-height:1.08;
+
+letter-spacing:-1px;
+
+}
+
+/* ==========================================================
+MAP
+========================================================== */
+
+.map{
+
+grid-column:1 / -1;
+
+padding:0;
+
+overflow:hidden;
+
+}
+
+.map iframe{
+
+display:block;
+
+width:100%;
+
+height:300px;
+
+border:none;
+
+}
+
+/* ==========================================================
+RSVP
+========================================================== */
+
+.confirm{
+
+grid-column:1 / -1;
+
+padding:34px 24px;
+
+text-align:center;
+
+}
+
+.confirm h2{
+
+font-size:44px;
+
+letter-spacing:-2px;
+
+margin-bottom:24px;
+
+}
+
+.confirm button{
+
+border:none;
+
+background:#fff;
+
+color:#266CF2;
+
+padding:18px 34px;
+
+font-size:21px;
+
+font-weight:700;
+
+border-radius:999px;
+
+cursor:pointer;
+
+transition:all .35s ease;
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.10);
+
+}
+
+.confirm button:hover{
+
+transform:translateY(-2px) scale(1.04);
+
+}
+
+.confirm button:active{
+
+transform:scale(.96);
+
+}
+
+#message{
+
+margin-top:18px;
+
+font-size:20px;
+
+font-weight:600;
+
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width:430px){
+
+.app{
+
+padding:12px;
+
+}
+
+.eyebrow{
+
+font-size:48px;
+
+}
+
+.date h2{
+
+font-size:76px;
+
+}
+
+.date h3{
+
+font-size:38px;
+
+}
+
+.sand h2{
+
+font-size:30px;
+
+}
+
+.quote h2{
+
+font-size:32px;
+
+}
+
+}
+/* ==========================================================
+APPLE EFFECTS
+========================================================== */
+
+.card{
+
+will-change:transform;
+
+backface-visibility:hidden;
+
+transform-style:preserve-3d;
+
+}
+
+.card img{
+
+backface-visibility:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+border-radius:inherit;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.16),
+
+transparent 28%,
+
+transparent 72%,
+
+rgba(0,0,0,.04)
+
+);
+
+opacity:.9;
+
+}
+
+/* ==========================================================
+SCROLL ANIMATION
+========================================================== */
 
 .hero,
 .card{
 
 opacity:0;
 
-transform:translateY(40px);
+transform:
+translateY(50px)
+scale(.97);
 
 }
 
-.show{
+.hero.show,
+.card.show{
 
 opacity:1;
 
-transform:none;
+transform:
+translateY(0)
+scale(1);
 
 transition:
 
-1s cubic-bezier(.2,.8,.2,1);
+opacity .9s ease,
+
+transform .9s cubic-bezier(.2,.8,.2,1);
 
 }
 
-/* ===========================================
-PHONE
-=========================================== */
+/* ==========================================================
+PRESS EFFECT
+========================================================== */
 
-@media(max-width:430px){
+.card:active{
 
-.feed{
+transform:
 
-padding:12px;
-
-}
-
-.event{
-
-font-size:48px;
+scale(.985);
 
 }
 
-.large h2{
+/* ==========================================================
+BUTTON RIPPLE
+========================================================== */
 
-font-size:72px;
+.confirm button{
+
+position:relative;
+
+overflow:hidden;
 
 }
 
-.large h3{
+.confirm button span{
 
-font-size:38px;
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(38,108,242,.15);
+
+animation:ripple .7s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(7);
+
+opacity:0;
+
+}
+
+}
+
+/* ==========================================================
+FLOATING BACKGROUND
+========================================================== */
+
+.bg::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+left:-180px;
+
+top:-140px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,255,255,.35),
+
+transparent 70%);
+
+animation:float1 16s ease-in-out infinite;
+
+}
+
+.bg::after{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+right:-150px;
+
+bottom:-150px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(110,170,255,.18),
+
+transparent 70%);
+
+animation:float2 18s ease-in-out infinite;
+
+}
+
+@keyframes float1{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(25px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes float2{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================================
+SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#9abfff;
+
+border-radius:100px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+/* ==========================================================
+DESKTOP
+========================================================== */
+
+@media(min-width:800px){
+
+body{
+
+padding:40px;
+
+}
+
+.app{
+
+max-width:430px;
 
 }
 
