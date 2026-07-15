@@ -22,231 +22,182 @@
 
 <body>
 
-<div class="background"></div>
+<div class="bg"></div>
 
-<main class="feed">
+<main class="app">
 
-<!-- HERO -->
+    <!-- HERO -->
 
-<section class="hero">
+    <section class="hero">
 
-<img src="assets/header.jpg">
+        <img src="assets/header.jpg" alt="">
 
-<div class="heroOverlay">
+        <div class="overlay">
 
-<span class="event">
+            <span class="eyebrow">
+                ПИКНИК
+            </span>
 
-ПИКНИК
+            <div class="heroBottom">
 
-</span>
+                <div>
 
-<div class="heroInfo">
+                    <small>Адрес</small>
 
-<div>
+                    <p>ул. Цветочная 5</p>
 
-<span>
+                </div>
 
-Адрес
+                <div>
 
-</span>
+                    <small>Время</small>
 
-<p>
+                    <p>18:00–23:00</p>
 
-ул. Цветочная 5
+                </div>
 
-</p>
+            </div>
 
-</div>
+        </div>
 
-<div>
+    </section>
 
-<span>
+    <!-- APPLE GRID -->
 
-Время
+    <section class="cards">
 
-</span>
+        <article class="card blue date">
 
-<p>
+            <span class="label">
+                DATE
+            </span>
 
-18:00–23:00
+            <h2>7</h2>
 
-</p>
+            <h3>JUNE</h3>
 
-</div>
+            <p>Воскресенье</p>
 
-</div>
+        </article>
 
-</div>
+        <article class="card sand">
 
-</section>
+            <span class="label dark">
+                INVITATION
+            </span>
 
-<!-- GRID -->
+            <h2>
 
-<section class="grid">
+                Приглашение
 
-<div class="card blue large">
+                <br>
 
-<h2>
+                на свидание
 
-7
+            </h2>
 
-</h2>
+        </article>
 
-<h3>
+        <article class="card photo">
 
-JUNE
+            <img src="assets/photo1.jpg">
 
-</h3>
+        </article>
 
-<p>
+        <article class="card route blue">
 
-Воскресенье
+            <p>
 
-</p>
+                🚗
 
-</div>
+                Заберёт водитель
 
-<div class="card cream">
+                <br>
 
-<span>
+                в 17:40
 
-DATE
+            </p>
 
-</span>
+        </article>
 
-<h4>
+        <article class="card white">
 
-Приглашение
+            <span class="label dark">
 
-на свидание
+                ПРОГРАММА
 
-</h4>
+            </span>
 
-</div>
+            <ul>
 
-<div class="card photo">
+                <li>🍷 Ужин</li>
 
-<img src="assets/photo1.jpg">
+                <li>🌇 Прогулка</li>
 
-</div>
+                <li>📸 Фото</li>
 
-<div class="card photo">
+                <li>🎁 Сюрприз</li>
 
-<img src="assets/photo2.jpg">
+            </ul>
 
-</div>
+        </article>
 
-<div class="card blue wide">
+        <article class="card photoTall">
 
-<p class="small">
+            <img src="assets/photo2.jpg">
 
-Заберёт водитель
+        </article>
 
-в 17:40
+        <article class="card white quote">
 
-</p>
+            <h2>
 
-</div>
+                Этот вечер
 
-</section>
+                только
 
-<!-- MESSAGE -->
+                для нас ❤️
 
-<section class="message">
+            </h2>
 
-<div class="card white">
+        </article>
 
-<h2>
+        <article class="card map">
 
-Я хочу провести этот вечер только с тобой ❤️
+            <iframe
 
-</h2>
+            src="https://maps.google.com/maps?q=Москва&t=&z=14&ie=UTF8&iwloc=&output=embed"
 
-<p>
+            loading="lazy">
 
-Будет вкусный ужин.
+            </iframe>
 
-Красивое место.
+        </article>
 
-Прогулка.
+        <article class="card blue confirm">
 
-Фотографии.
+            <h2>
 
-И небольшой сюрприз.
+                Ты придёшь?
 
-</p>
+            </h2>
 
-</div>
+            <button id="accept">
 
-</section>
+                Конечно ❤️
 
-<!-- GALLERY -->
+            </button>
 
-<section class="gallery">
+            <p id="message"></p>
 
-<div class="card imageTall">
+        </article>
 
-<img src="assets/photo3.jpg">
-
-</div>
-
-<div class="card imageTall">
-
-<img src="assets/photo4.jpg">
-
-</div>
-
-</section>
-
-<!-- MAP -->
-
-<section class="mapCard">
-
-<div class="card white">
-
-<h2>
-
-Место встречи
-
-</h2>
-
-<iframe
-
-src="https://maps.google.com/maps?q=Москва&t=&z=14&ie=UTF8&iwloc=&output=embed"
-
-loading="lazy">
-
-</iframe>
-
-</div>
-
-</section>
-
-<!-- RSVP -->
-
-<section class="rsvp">
-
-<div class="card blue rsvpCard">
-
-<h2>
-
-Ты придёшь?
-
-</h2>
-
-<button id="accept">
-
-Конечно ❤️
-
-</button>
-
-</div>
-
-</section>
+    </section>
 
 </main>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
