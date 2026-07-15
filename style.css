@@ -477,3 +477,92 @@ height:160px;
 }
 
 }
+/* ===========================
+CONFETTI
+=========================== */
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:12px;
+
+height:12px;
+
+background:#2d6df5;
+
+border-radius:50%;
+
+animation:fall linear forwards;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+
+.confetti:nth-child(3n){
+
+background:#ff4d8d;
+
+}
+
+.confetti:nth-child(4n){
+
+background:#ffd23f;
+
+}
+
+.confetti:nth-child(5n){
+
+background:#6adf91;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+PHOTO ZOOM
+=========================== */
+
+.zoom{
+
+position:fixed!important;
+
+top:50%!important;
+
+left:50%!important;
+
+transform:translate(-50%,-50%) scale(2)!important;
+
+width:80vw!important;
+
+height:auto!important;
+
+z-index:99999;
+
+box-shadow:0 25px 80px rgba(0,0,0,.4);
+
+border-radius:30px;
+
+}
